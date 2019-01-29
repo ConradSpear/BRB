@@ -18,6 +18,10 @@
     margin-top: 25px;
 }
 
+.margin-top-large{
+    margin-top: 100px;
+}
+
 .background-default{
     color:#fff !important; 
 }
@@ -45,4 +49,8 @@
 
 a {
     text-decoration: none !important;
+}
+
+.modal-opacity{
+    opacity: 100 !important;
 }
