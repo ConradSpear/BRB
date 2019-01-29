@@ -6,42 +6,52 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">BRB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Connection Summaries <span class="sr-only">(current)</span></a>
-                </li>             
-                
-                <li class="nav-item ">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calendar</a>
-                </li>
-                <li  class="nav-item">
-                    <a class="nav-link btn btn-primary" href="#" tabindex="-1" aria-disabled="true">Add Connection</a>
-                </li>
-            </ul>            
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Name</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Email</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
         </div>
-    </nav>
-
-    <div>
-        <input type="text" value="" placeholder="Name">
-    </div>
-
-    <div class="row">
-        <div class="col" style="float: left">
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cancel</a>
+        <div class="form-group">
+            <label for="inputAddress">Office</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
         </div>
-        <div class="col" style="float: right">
-            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Save</a>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
         </div>
-    </div>
-    
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Cancel/button>
+    </form>
 </body>
 
 </html>
