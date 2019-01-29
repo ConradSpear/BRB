@@ -3,11 +3,13 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
+
+    <link rel="stylesheet" href="appStyle.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">BRB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,59 +18,47 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Connection Summaries <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link btn btn-primary" href="#" tabindex="-1" aria-disabled="true">Add Connection</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
-    <div class="row">
-        <div class="card col-mx" style="width: 12rem;">
+    <div class="row ">
+        <a href="#">
+            <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-week">
 
-            <div class="card-body">
-                <h5 class="card-title">John Doe</h5>
-                <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
-                <a href="#" class="btn btn-primary">Edit Connection</a>
+                <div class="card-body">
+                    <h5 class="card-title">John Doe</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
+                </div>
             </div>
-        </div>
-        <div class="card col-mx" style="width: 12rem;">
+        </a>
+        <a href="#">
+            <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-month">
 
-            <div class="card-body">
-                <h5 class="card-title">Jane Doe</h5>
-                <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
-                <a href="#" class="btn btn-primary">Edit Connection</a>
+                <div class="card-body">
+                    <h5 class="card-title">Jane Doe</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">This Month</h6>
+                </div>
             </div>
-        </div>
-        <div class="card col-mx" style="width: 12rem;">
+        </a>
+        <a href="#">
+            <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-three-month">
 
-            <div class="card-body">
-                <h5 class="card-title">Ted Bates</h5>
-                <h6 class="card-subtitle mb-2 text-muted">This Month</h6>
-                <a href="#" class="btn btn-primary">Edit Connection</a>
+                <div class="card-body">
+                    <h5 class="card-title">Ted Bates</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">In 3 Months</h6>                    
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </body>
 

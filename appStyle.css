@@ -42,3 +42,7 @@
 .background-color-never{
     background-color:#f8fcfe !important
 } 
+
+a {
+    text-decoration: none !important;
+}
