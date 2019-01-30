@@ -46,16 +46,35 @@
 } 
 
 .background-color-dallas{
-    background-color:#b8e2f3 !important
+    background-color:#46e385 !important
 } 
 
 .background-color-dc{
-    background-color:#A7CEEB !important
+    background-color:#84b7db !important
 }
 
 .background-color-houston{
-    background-color:#f8fcfe !important
+    background-color: #0ea197!important
 } 
+
+.background-color-philadelphia{
+    background-color:#0aa648 !important
+} 
+
+.background-color-losangeles{
+    background-color:#229ad6 !important
+} 
+
+.background-color-sanfrancisco{
+    background-color:#5e95db !important
+} 
+.background-color-seattle{
+    background-color:#066391 !important
+} 
+.background-color-newyork{
+    background-color:#376180 !important
+} 
+
 
 a {
     text-decoration: none !important;
