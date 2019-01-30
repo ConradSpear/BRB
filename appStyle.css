@@ -6,12 +6,19 @@
     margin-left: 25px;
 }
 
+.margin-left-smallest{
+    margin-left: 15px;
+}
 .padding-right-small{
     padding-right: 5px;
 }
 
 .margin-bottom-small{
     margin-bottom: 10px;
+}
+
+.margin-bottom-smallest{
+    margin-bottom: 5px;
 }
 
 .card-width{
@@ -30,24 +37,23 @@
     color:#fff !important; 
 }
 
-.background-color-week{
-    
-    background-color:#2aa9db !important
+.background-color-atlanta{
+    background-color:#43ded3 !important
 } 
 
-.background-color-month{    
-    background-color:#69c2e6 !important
+.background-color-chicago{    
+    background-color:#8DD4f7 !important
 } 
 
-.background-color-three-month{
+.background-color-dallas{
     background-color:#b8e2f3 !important
 } 
 
-.background-color-six-month{
-    background-color:#e7f5fb !important
+.background-color-dc{
+    background-color:#A7CEEB !important
 }
 
-.background-color-never{
+.background-color-houston{
     background-color:#f8fcfe !important
 } 
 
@@ -115,3 +121,7 @@ a {
     text-align: center;
     
   }
+
+
+  
+  
