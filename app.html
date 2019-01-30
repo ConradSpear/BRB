@@ -39,35 +39,38 @@
 
     <div class="row">
         <div class="row col-9">
-            <div class="filterDiv week">
+            <div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-week">
 
                         <div class="card-body">
                             <h5 class="card-title">John Doe</h5>
                             <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
+                            <span class="dot">ATL</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="filterDiv 1-month">
+            <div class="filterDiv chi">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-month">
 
                         <div class="card-body">
                             <h5 class="card-title">Jane Doe</h5>
                             <h6 class="card-subtitle mb-2 text-muted">This Month</h6>
+                            <span class="dot">CHI</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="filterDiv 3-month">
+            <div class="filterDiv dc">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-three-month">
 
                         <div class="card-body">
                             <h5 class="card-title">Ted Bates</h5>
                             <h6 class="card-subtitle mb-2 text-muted">In 3 Months</h6>
+                            <span class="dot">DC</span>
                         </div>
                     </div>
                 </a>
@@ -75,7 +78,7 @@
         </div>
 
 
-        <div class="col-2">
+        <!--<div class="col-2">
             <h2>Filter By</h2>
             <h2>Frequency</h2>
 
@@ -86,9 +89,22 @@
                 <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('3-month')"> In 3 Months</button>
 
             </div>
-
-
         </div>
+        -->
+        <div class="col-2">
+                <h2>Filter By</h2>
+                <h2>City</h2>
+    
+                <div id="myBtnContainer">
+                    <button class="btn active btn-mid-width margin-bottom-small" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('atl')">Atlanta</button>
+                    <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('chi')">Chicago</button>
+                    <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('dc')">Washington DC</button>
+    
+                </div>
+    
+    
+            </div>
     </div>
 
 
