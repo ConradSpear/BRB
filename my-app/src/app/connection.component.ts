@@ -10,5 +10,7 @@ import { Component, Input } from '@angular/core';
 export class ConnectionComponent {
     constructor() {}
     @Input() name = '';
-  //  @Input() email = 'katie.lutz@pv.com'
+    @Input() email = '';
+    @Input() notes = '';
+    
 }

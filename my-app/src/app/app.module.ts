@@ -15,6 +15,7 @@ import { ConnectionComponent } from './connection.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AlertModule.forRoot()
   ],
   providers: [],

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { connectionData } from './connectionData';
+import { Connection } from './connection';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
@@ -6,20 +9,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class ModalComponent {
-  name = 'Alice';
-  modalVisible = false;
-  editedName = '';
-  setModal(v: boolean) {
-    this.modalVisible = v;
-    this.editedName = this.name;
+  constructor(){}
+  @Input() name = '';
+  @Input() email = '';
+  @Input() notes = '';
+  @Input() modalVisible;
+  connection: Array<Connection> = connectionData;
+  @Output() toggleModal: EventEmitter<any> = new EventEmitter();
+  @Output() connectionSave = new EventEmitter<Connection>();
+
+  toggle() {
+    this.toggleModal.emit();
   }
-  close() {
-    this.modalVisible = false;
+  
+  onDelete(c: Connection) {
+    const index = this.connection.indexOf(c);
+    this.connection.splice(index, 1);
   }
-  saveChanges() {
-    this.modalVisible = false;
-    this.name = this.editedName;
-  }
+
+  onSave() {
+    this.connectionSave.emit(
+        { name: this.name, email: this.email, notes: this.notes, office: '', frequency: '' }
+    );
+}
 }
 
 

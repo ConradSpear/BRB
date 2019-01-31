@@ -12,6 +12,8 @@ import { currentConnections } from './currentConnectionsJSON'
 })
 export class AppComponent implements OnInit{
   title = 'my-app';
+  name = 'Alice';
+  editedName = '';
   modalVisible: boolean = false;
   overLay: boolean = false;
   
@@ -22,16 +24,15 @@ export class AppComponent implements OnInit{
     this.filterSelection("all")
   }
 
-  toggleModal(){
-    this.modalVisible = !this.modalVisible;
-    var element = document.getElementById("main");
-    element.classList.toggle("overlay");
+  
 
+  toggleModal(){
+    this.modalVisible = !this.modalVisible;    
+    this.editedName = this.name;    
     var modal = document.getElementById('myModal');
     window.onclick = (event) => {
-      if (event.target == modal) {        
-        this.modalVisible = !this.modalVisible;
-        element.classList.toggle("overlay");
+      if (event.target === modal) {        
+        this.modalVisible = !this.modalVisible;        
      }
     }
   }
@@ -69,6 +70,10 @@ export class AppComponent implements OnInit{
   toggleDropDownName(){
     var dd = document.getElementsByClassName("dropdown-menu");
       
+}
+
+onConnectionSave(c: Connection) {
+  this.connections.push(c);
 }
 
 

@@ -1,4 +1,4 @@
-<div id="main">
+<div id="main" [ngClass]="modalVisible ? 'overlay' : ''" >
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">BRB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -24,18 +24,18 @@
 
     <div class="row">
         <div class="row col-9">
-            <div
+            <!--<div
                 *ngFor="let connection of connections">
                 <app-connection [name] = "connection.name"></app-connection>
             </div>
-
+        -->
             
-            <!--
+            
             <div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
                         <div class="card-body">
-                            <h5 class="card-title">John Doe</h5>
+                            <h5 class="card-title" [name] = "John Doe">John Doe</h5>
                             <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
                             <span class="dot">ATL</span>
                         </div>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </a>
-            </div>-->
+            </div>
         </div>
 
 
@@ -90,74 +90,9 @@
 
         </div>
 
+        <app-modal [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave) = 'onConnectionSave($event)'></app-modal>
 
-
-        <!-- Modal -->
-        <div class="modal modal-opacity margin-top-large" [style.display]="modalVisible ? 'block' : 'none'" id="myModal"
-            role="dialog">
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-left">Edit Connection</h4>
-                        <button type="button" (click)="toggleModal()" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-4 margin-left-smallest">
-                                    <label for="inputEmail4"><strong>Name</strong></label>
-                                    <input type="text" class="form-control form-control" id="inputEmail4" placeholder="">
-                                </div>
-                                <div class="form-group col-7 margin-left-small">
-                                    <label for="inputEmail"><strong>Email</strong></label>
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
-
-                                </div>
-                            </div>
-                            <div class="form-group col-12">
-                                <label for="inputNotes"><strong>Notes</strong></label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-
-                            <div class="form form-row">
-                                <div class="form-group col-3 margin-left-smallest">
-
-                                    <select class="btn btn-secondary">
-                                        <option class="dropdown-item" value="null">Office</option>
-                                        <option class="dropdown-item" *ngFor="let city of cities" value={{city.id}}>
-                                            {{city.name}}
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="form-group margin-left-small">
-                                    <select class="btn btn-secondary">
-                                        <option class="dropdown-item" value="null">Meeting Frequency</option>
-                                        <option class="dropdown-item" *ngFor="let frequency of frequencies" value={{frequency.id}}>
-                                            {{frequency.name}}
-                                        </option>
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-4 margin-left-smallest">
-                                    <label for="inputAddress2"><strong>Date Last Contacted</strong></label>
-                                    <input type="datetime-local" class="form-control" id="inputAddress2" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success btn-sm margin-left-small" data-dismiss="modal">Save</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        
 
     </div>
 
