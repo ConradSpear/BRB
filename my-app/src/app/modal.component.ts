@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { connectionData } from './connectionData';
+import { currentConnections} from './currentConnectionsJSON';
 import { Connection } from './connection';
 import {NgForm} from '@angular/forms';
 
@@ -13,8 +13,9 @@ export class ModalComponent {
   @Input() name = '';
   @Input() email = '';
   @Input() notes = '';
-  @Input() modalVisible;
-  connection: Array<Connection> = connectionData;
+  @Input() modalVisible;  
+  @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
+  connections: Array<Connection> = currentConnections;
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
   @Output() connectionSave = new EventEmitter<Connection>();
 
@@ -23,8 +24,8 @@ export class ModalComponent {
   }
   
   onDelete(c: Connection) {
-    const index = this.connection.indexOf(c);
-    this.connection.splice(index, 1);
+    const index = this.connections.indexOf(c);
+    this.connections.splice(index, 1);
   }
 
   onSave() {

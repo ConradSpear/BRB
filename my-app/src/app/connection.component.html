@@ -1,8 +1,10 @@
 <a href="#" data-toggle="modal" data-target="#myModal">
-    <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-color-atlanta">
+    <div (click)="toggle()" class="card col-mx margin-left-small margin-top-small card-width background-color-atlanta">
         <div class="card-body">
-            <h5 class="card-title"> {{name}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted"> {{office}}</h6>
+            <h5 class="card-title"> {{connection.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> {{connection.office}}</h6>
         </div>
     </div>
 </a>
+
+<app-modal [connection]="connection" [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>

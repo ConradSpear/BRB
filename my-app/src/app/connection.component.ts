@@ -1,6 +1,6 @@
 
-import { Component, Input } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Connection } from './connection';
 @Component({
     selector: 'app-connection',
     templateUrl: './connection.component.html',
@@ -12,7 +12,11 @@ export class ConnectionComponent {
     @Input() name = '';
     @Input() email = '';
     @Input() notes = '';
+    @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
+    @Output() toggleModal: EventEmitter<any> = new EventEmitter();
     
 
-    
+    toggle() {
+        this.toggleModal.emit();
+      }
 }

@@ -3,6 +3,7 @@ import { City } from './city';
 import { Frequency } from './frequency';
 import { Connection } from './Connection';
 import { currentConnections } from './currentConnectionsJSON'
+import { ConnectionComponent } from './connection.component';
 
 
 @Component({
@@ -12,10 +13,11 @@ import { currentConnections } from './currentConnectionsJSON'
 })
 export class AppComponent implements OnInit{
   title = 'my-app';
-  name = 'Alice';
+  name = '';
   editedName = '';
   modalVisible: boolean = false;
   overLay: boolean = false;
+  connection: Connection; 
   
   connections: Array<Connection> = currentConnections;
 
