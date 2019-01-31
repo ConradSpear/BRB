@@ -4,4 +4,6 @@ export interface Connection {
     notes: string;
     office: string;
     frequency: string;
+
+    
 }

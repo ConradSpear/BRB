@@ -13,4 +13,6 @@ export class ConnectionComponent {
     @Input() email = '';
     @Input() notes = '';
     
+
+    
 }
