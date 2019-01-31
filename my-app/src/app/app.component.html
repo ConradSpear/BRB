@@ -1,4 +1,4 @@
-<div id="main" [ngClass]="modalVisible ? 'overlay' : ''" >
+<div id="main" [ngClass]="modalVisible ? 'overlay' : ''">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">BRB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -22,20 +22,36 @@
         </div>
     </nav>
 
+    <div id="myBtnContainer" class="margin-top-xsmall">
+        <div class="row">
+            <button class="btn active btn-mid-width margin-bottom-small" (click)="filterSelection('all')"> Show all</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('atl')">Atlanta</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('chi')">Chicago</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dal')">Dallas</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('hou')">Houston</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('la')">Los Angeles</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('ny')">New York</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('phi')">Philadelphia</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sf')">San Francisco</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sea')">Seattle</button>
+            <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dc')">Washington DC</button>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="row col-9">
+        <div class="row margin-left-xsmall">
             <!--<div
                 *ngFor="let connection of connections">
                 <app-connection [name] = "connection.name"></app-connection>
             </div>
         -->
-            
-            
+
+
             <div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
                         <div class="card-body">
-                            <h5 class="card-title" >John Doe</h5>
+                            <h5 class="card-title">John Doe</h5>
                             <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
                             <span class="dot">ATL</span>
                         </div>
@@ -69,30 +85,10 @@
         </div>
 
 
-        <div class="col-2">
-            <h2>Filter By</h2>
-            <h2>City</h2>
 
-            <div id="myBtnContainer">
-                <button class="btn active btn-mid-width margin-bottom-small" (click)="filterSelection('all')"> Show all</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('atl')">Atlanta</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('chi')">Chicago</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dal')">Dallas</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('hou')">Houston</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('la')">Los Angeles</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('ny')">New York</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('phi')">Philadelphia</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sf')">San Francisco</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sea')">Seattle</button>
-                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dc')">Washington DC</button>
+        <app-modal [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
 
-            </div>
 
-        </div>
-
-        <app-modal [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave) = 'onConnectionSave($event)'></app-modal>
-
-        
 
     </div>
 
