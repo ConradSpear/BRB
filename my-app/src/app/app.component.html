@@ -22,7 +22,7 @@
         </div>
     </nav>
 
-    
+
     <div id="myBtnContainer" class="margin-top-xsmall">
         <div class="row">
             <button class="btn active btn-mid-width margin-bottom-small" (click)="filterSelection('all')"> Show all</button>
@@ -40,17 +40,20 @@
     </div>
 
 
-    
+
+
     <div class="row">
         <div class="row margin-left-xsmall">
-            <!--<div
-                *ngFor="let connection of connections">
-                <app-connection [name] = "connection.name"></app-connection>
+            <div *ngFor="let connection of connections">
+                <div *ngIf="connection.office=='Atlanta'" (click)="toggleModal()">
+                    <app-connection [name]="connection.name" [email]="connection.email"></app-connection>
+                </div>
             </div>
-        -->
+        </div>
+    </div>
 
 
-            <div class="filterDiv atl">
+    <!--<div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
                         <div class="card-body">
@@ -60,39 +63,15 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="filterDiv chi">
-                <a href="#" data-toggle="modal" data-target="#myModal">
-                    <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-chicago">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Jane Doe</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">This Month</h6>
-                            <span class="dot">CHI</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="filterDiv dc">
-                <a href="#" data-toggle="modal" data-target="#myModal">
-                    <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-dc">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Ted Bates</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">In 3 Months</h6>
-                            <span class="dot">DC</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+            </div>-->
 
 
 
-        <app-modal [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
 
 
+    <app-modal [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
 
-    </div>
+
 
 </div>
+
