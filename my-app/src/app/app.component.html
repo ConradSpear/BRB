@@ -1,6 +1,4 @@
-
-
-<div>
+<div id="main">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">BRB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -17,18 +15,18 @@
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calendar</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Add Connection</a>
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Add Connection</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div class="row">
         <div class="row col-9">
             <div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
-                    <div class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
+                    <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
                         <div class="card-body">
                             <h5 class="card-title">John Doe</h5>
                             <h6 class="card-subtitle mb-2 text-muted">This Week</h6>
@@ -64,104 +62,92 @@
         </div>
 
 
-            <div class="col-2">
+        <div class="col-2">
             <h2>Filter By</h2>
             <h2>City</h2>
 
             <div id="myBtnContainer">
-                <button class="btn active btn-mid-width margin-bottom-small" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('atl')">Atlanta</button>
-                <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('chi')">Chicago</button>
-                <button class="btn btn-mid-width margin-bottom-small" onclick="filterSelection('dc')">Washington DC</button>
+                <button class="btn active btn-mid-width margin-bottom-small" (click)="filterSelection('all')"> Show all</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('atl')">Atlanta</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('chi')">Chicago</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dc')">Washington DC</button>
 
-            </div>
-        
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade modal-opacity margin-top-large" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-
-            <!-- Modal content-->
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <h4 class="modal-title text-left">Edit Connection</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-4 margin-left-smallest">
-                                <label for="inputEmail4"><strong>Name</strong></label>
-                                <input type="email" class="form-control form-control" id="inputEmail4" placeholder="">
-                            </div>
-                            <div class="form-group col-7 margin-left-small">
-                                    <label for="inputEmail"><strong>Email</strong></label>
-                            <input type="text" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
-
-                            </div>
-                        </div>
-                        <div class="form-group col-12">
-                                <label for="inputNotes"><strong>Notes</strong></label>
-                                <textarea class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form form-row">
-                            <div class="form-group col-3 margin-left-smallest">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Office
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Atlanta</a></li>
-                                    <li><a class="dropdown-item" href="#">Chicago</a></li>
-                                    <li><a class="dropdown-item" href="#">Dallas</a></li>
-                                    <li><a class="dropdown-item" href="#">Houston</a></li>
-                                    <li><a class="dropdown-item" href="#">Los Angeles</a></li>
-                                    <li><a class="dropdown-item" href="#">New York</a></li>
-                                    <li><a class="dropdown-item" href="#">Philadelphia</a></li>
-                                    <li><a class="dropdown-item" href="#">San Francisco</a></li>
-                                    <li><a class="dropdown-item" href="#">Seattle</a></li>
-                                    <li><a class="dropdown-item" href="#">Washington D.C.</a></li>
-                                </ul>
-                            </div>
-                            <div class="form-group margin-left-small">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Meeting Frequency
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">This week</a></li>
-                                    <li><a class="dropdown-item" href="#">Sometime this month</a></li>
-                                    <li><a class="dropdown-item" href="#">Within 3 months</a></li>
-                                    <li><a class="dropdown-item" href="#">Within 6 months</a></li>
-                                    <li><a class="dropdown-item" href="#">Never</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-4 margin-left-smallest">
-                                <label for="inputAddress2"><strong>Date Last Contacted</strong></label>
-                                <input type="datetime-local" class="form-control" id="inputAddress2" placeholder="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button  type="submit" class="btn btn-success btn-sm margin-left-small" data-dismiss="modal">Save</button>
-                </div>
             </div>
 
         </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal modal-opacity margin-top-large" [style.display]="modalVisible ? 'block' : 'none'" id="myModal"
+            role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-left">Edit Connection</h4>
+                        <button type="button" (click)="toggleModal()" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-4 margin-left-smallest">
+                                    <label for="inputEmail4"><strong>Name</strong></label>
+                                    <input type="email" class="form-control form-control" id="inputEmail4" placeholder="">
+                                </div>
+                                <div class="form-group col-7 margin-left-small">
+                                    <label for="inputEmail"><strong>Email</strong></label>
+                                    <input type="text" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
+
+                                </div>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="inputNotes"><strong>Notes</strong></label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <div class="form form-row">
+                                <div class="form-group col-3 margin-left-smallest">
+
+                                    <select class="btn btn-secondary">
+                                            <option value="null">City</option>
+
+                                        <option class="dropdown-item" *ngFor="let city of cities" value={{city.id}}>
+                                            {{city.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group margin-left-small">
+                                    <select class="btn btn-secondary">
+                                        <option value="null">Meeting Frequency</option>
+                                        <option class="dropdown-item" *ngFor="let frequency of frequencies"
+                                            value={{frequency.id}}>
+                                            {{frequency.name}}
+                                        </option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-4 margin-left-smallest">
+                                    <label for="inputAddress2"><strong>Date Last Contacted</strong></label>
+                                    <input type="datetime-local" class="form-control" id="inputAddress2" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-sm margin-left-small" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-    
-    </div>
 
-  </div>
-
-
+</div>
