@@ -24,6 +24,13 @@
 
     <div class="row">
         <div class="row col-9">
+            <div
+                *ngFor="let connection of connections">
+                <app-connection [name] = "connection.name"></app-connection>
+            </div>
+
+            
+            <!--
             <div class="filterDiv atl">
                 <a href="#" data-toggle="modal" data-target="#myModal">
                     <div (click)="toggleModal()" class="card col-mx margin-left-small margin-top-small card-width background-default background-color-atlanta">
@@ -58,7 +65,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div>-->
         </div>
 
 

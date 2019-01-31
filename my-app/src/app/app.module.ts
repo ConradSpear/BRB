@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal.component';
+import { ConnectionComponent } from './connection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
+    ModalComponent,
+    ConnectionComponent
   ],
   imports: [
     BrowserModule,

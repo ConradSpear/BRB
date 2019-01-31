@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './city';
 import { Frequency } from './frequency';
+import { Connection } from './Connection';
+import { currentConnections } from './currentConnectionsJSON'
 
 
 @Component({
@@ -13,6 +15,8 @@ export class AppComponent implements OnInit{
   modalVisible: boolean = false;
   overLay: boolean = false;
   
+  connections: Array<Connection> = currentConnections;
+
 
   ngOnInit() {
     this.filterSelection("all")
@@ -64,10 +68,12 @@ export class AppComponent implements OnInit{
 
   toggleDropDownName(){
     var dd = document.getElementsByClassName("dropdown-menu");
-    
-    
-  
+      
 }
+
+
+
+
 
 cities = [
   new City(1, 'Atlanta'),
