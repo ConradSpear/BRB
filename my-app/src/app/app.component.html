@@ -70,6 +70,13 @@
                 <button class="btn active btn-mid-width margin-bottom-small" (click)="filterSelection('all')"> Show all</button>
                 <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('atl')">Atlanta</button>
                 <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('chi')">Chicago</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dal')">Dallas</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('hou')">Houston</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('la')">Los Angeles</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('ny')">New York</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('phi')">Philadelphia</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sf')">San Francisco</button>
+                <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('sea')">Seattle</button>
                 <button class="btn btn-mid-width margin-bottom-small" (click)="filterSelection('dc')">Washington DC</button>
 
             </div>
@@ -88,18 +95,17 @@
                     <div class="modal-header">
                         <h4 class="modal-title text-left">Edit Connection</h4>
                         <button type="button" (click)="toggleModal()" class="close" data-dismiss="modal">&times;</button>
-
                     </div>
                     <div class="modal-body">
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-4 margin-left-smallest">
                                     <label for="inputEmail4"><strong>Name</strong></label>
-                                    <input type="email" class="form-control form-control" id="inputEmail4" placeholder="">
+                                    <input type="text" class="form-control form-control" id="inputEmail4" placeholder="">
                                 </div>
                                 <div class="form-group col-7 margin-left-small">
                                     <label for="inputEmail"><strong>Email</strong></label>
-                                    <input type="text" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
 
                                 </div>
                             </div>
@@ -112,8 +118,7 @@
                                 <div class="form-group col-3 margin-left-smallest">
 
                                     <select class="btn btn-secondary">
-                                            <option class="dropdown-item" value="null">Office</option>
-
+                                        <option class="dropdown-item" value="null">Office</option>
                                         <option class="dropdown-item" *ngFor="let city of cities" value={{city.id}}>
                                             {{city.name}}
                                         </option>
@@ -122,8 +127,7 @@
                                 <div class="form-group margin-left-small">
                                     <select class="btn btn-secondary">
                                         <option class="dropdown-item" value="null">Meeting Frequency</option>
-                                        <option class="dropdown-item" *ngFor="let frequency of frequencies"
-                                            value={{frequency.id}}>
+                                        <option class="dropdown-item" *ngFor="let frequency of frequencies" value={{frequency.id}}>
                                             {{frequency.name}}
                                         </option>
                                     </select>
