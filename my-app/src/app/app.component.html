@@ -112,7 +112,7 @@
                                 <div class="form-group col-3 margin-left-smallest">
 
                                     <select class="btn btn-secondary">
-                                            <option value="null">City</option>
+                                            <option class="dropdown-item" value="null">Office</option>
 
                                         <option class="dropdown-item" *ngFor="let city of cities" value={{city.id}}>
                                             {{city.name}}
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="form-group margin-left-small">
                                     <select class="btn btn-secondary">
-                                        <option value="null">Meeting Frequency</option>
+                                        <option class="dropdown-item" value="null">Meeting Frequency</option>
                                         <option class="dropdown-item" *ngFor="let frequency of frequencies"
                                             value={{frequency.id}}>
                                             {{frequency.name}}
