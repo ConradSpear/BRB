@@ -42,14 +42,13 @@
     <div class="row">
         <div class="row margin-left-xsmall">
             <div *ngFor="let connection of connections">
-                <div *ngIf="connection.office=='Atlanta'" (click)="toggleModal()">
-                    <app-connection [connection]="connection" ></app-connection>
-                    <app-modal [connection]="connection" [modalVisible]="modalVisible" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
+                <div *ngIf="connection.office=='Atlanta'">
+                    <app-connection (selected)="selected($event)" [connection]="connection" ></app-connection>
                 </div>
             </div>
         </div>
     </div>
-
     
-</div>
+    <app-modal [connection]="selectedConnection"  *ngIf="selectedConnection != null" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
 
+</div>

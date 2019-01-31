@@ -13,11 +13,13 @@ export class ModalComponent {
   @Input() name = '';
   @Input() email = '';
   @Input() notes = '';
-  @Input() modalVisible;  
+  @Input() modalVisible ;  
   @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
   connections: Array<Connection> = currentConnections;
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
   @Output() connectionSave = new EventEmitter<Connection>();
+  
+
 
   toggle() {
     this.toggleModal.emit();

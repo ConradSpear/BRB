@@ -11,31 +11,33 @@ import { ConnectionComponent } from './connection.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'my-app';
   name = '';
   editedName = '';
-  modalVisible: boolean = false;
   overLay: boolean = false;
-  connection: Connection; 
-  
+  selectedConnection: Connection;
+
   connections: Array<Connection> = currentConnections;
 
+  selected(c: Connection) {
+    this.selectedConnection = c;
+  }
+
+  modalVisible (){return this.selectedConnection != null};
 
   ngOnInit() {
     this.filterSelection("all")
   }
 
-  
-
-  toggleModal(){
-    this.modalVisible = !this.modalVisible;    
-    this.editedName = this.name;    
+  toggleModal() {
+    this.selectedConnection = undefined;
+    this.editedName = this.name;
     var modal = document.getElementById('myModal');
     window.onclick = (event) => {
-      if (event.target === modal) {        
-        this.modalVisible = !this.modalVisible;        
-     }
+      if (event.target === modal) {
+       
+      }
     }
   }
 
@@ -50,16 +52,16 @@ export class AppComponent implements OnInit{
         x[i].classList += " show";
       }
     }
-  
+
     this.active();
   }
-  
+
   // Add active class to the current button (highlight it)
   active() {
-  
+
     var btnContainer = document.getElementById("myBtnContainer");
     var btns = btnContainer.getElementsByClassName("btn");
-  
+
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("btn active");
@@ -69,38 +71,34 @@ export class AppComponent implements OnInit{
     }
   }
 
-  toggleDropDownName(){
+  toggleDropDownName() {
     var dd = document.getElementsByClassName("dropdown-menu");
-      
-}
 
-onConnectionSave(c: Connection) {
-  this.connections.push(c);
-}
+  }
 
+  onConnectionSave(c: Connection) {
+    this.connections.push(c);
+  }
 
+  cities = [
+    new City(1, 'Atlanta'),
+    new City(2, 'Chicago'),
+    new City(3, 'Dallas'),
+    new City(4, 'Houston'),
+    new City(5, 'Los Angeles'),
+    new City(6, 'New York'),
+    new City(7, 'Philadelphia'),
+    new City(8, 'San Francisco'),
+    new City(9, 'Seattle'),
+    new City(10, 'Washington D.C.')
+  ]
 
-
-
-cities = [
-  new City(1, 'Atlanta'),
-  new City(2, 'Chicago'),
-  new City(3, 'Dallas'),
-  new City(4, 'Houston'),
-  new City(5, 'Los Angeles'),
-  new City(6, 'New York'),
-  new City(7, 'Philadelphia'),
-  new City(8, 'San Francisco'),
-  new City(9, 'Seattle'),
-  new City(10, 'Washington D.C.')
-]
-
-frequencies = [
-  new City(1, 'This Week'),
-  new City(2, 'Sometime this month'),
-  new City(3, 'Within 3 months'),
-  new City(4, 'Within 6 months'),
-  new City(5, 'Never') 
-]
+  frequencies = [
+    new City(1, 'This Week'),
+    new City(2, 'Sometime this month'),
+    new City(3, 'Within 3 months'),
+    new City(4, 'Within 6 months'),
+    new City(5, 'Never')
+  ]
 
 }

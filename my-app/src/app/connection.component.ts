@@ -1,5 +1,6 @@
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { currentConnections } from './currentConnectionsJSON';
 import { Connection } from './connection';
 @Component({
     selector: 'app-connection',
@@ -8,15 +9,12 @@ import { Connection } from './connection';
 })
 
 export class ConnectionComponent {
-    constructor() {}
-    @Input() name = '';
-    @Input() email = '';
-    @Input() notes = '';
-    @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
-    @Output() toggleModal: EventEmitter<any> = new EventEmitter();
-    
+    constructor() { }
 
-    toggle() {
-        this.toggleModal.emit();
-      }
+    @Input() connection: Connection = { name: "", email: "", notes: "", office: "", frequency: "" };
+    @Output() selected: EventEmitter<Connection> = new EventEmitter();
+
+    select() {
+        this.selected.emit(this.connection);
+    }
 }
