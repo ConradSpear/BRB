@@ -13,6 +13,10 @@ import { ConnectionChiComponent } from './connectionChi.component';
 export class AppComponent implements OnInit {
   title = 'my-app';
   name = '';
+  email ='';
+  notes = '';
+  office ='';
+  freq = '';
   editedName = '';
   overLay: boolean = false;
   selectedConnection: Connection;
@@ -25,10 +29,23 @@ export class AppComponent implements OnInit {
 
   selected(c: Connection) {
     this.selectedConnection = c;
+    this.name = c.name; 
+    this.email = c.email;
+    this.notes = c.notes;
+    this.office = c.office;
+    this.freq = c.frequency;
 
   }
 
   onConnectionSave(c: Connection) {
+    for(var p in c)
+    {
+      this.selectedConnection[p] = c[p];
+    }
+    
+  }
+
+  onConnectionSaveNew(c: Connection) {
     //this.selectedConnection = c;
     this.connections.push(c);
     this.newConnection = {name:"", email: "", notes: "", office: "", frequency: ""};

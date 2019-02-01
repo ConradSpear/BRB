@@ -14,23 +14,23 @@
                     <div class="form-row">
                         <div class="form-group col-4 margin-left-smallest">
                             <label for="inputEmail4"><strong>Name</strong></label>
-                            <input [ngModel] = "connection.name"  name="connectionName" type="string" class="form-control form-control" id="inputEmail4" placeholder="">
+                            <input [(ngModel)] = "connectionName"  name="name" type="string" class="form-control form-control" id="inputEmail4" placeholder="">
                         </div>
                         <div class="form-group col-7 margin-left-small">
                             <label for="inputEmail"><strong>Email</strong></label>
-                            <input [ngModel] = "connection.email" name="email"  type="string" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
+                            <input [(ngModel)] = "connectionEmail" name="email"  type="string" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
 
                         </div>
                     </div>
                     <div class="form-group col-12">
                         <label for="inputNotes"><strong>Notes</strong></label>
-                        <textarea [ngModel] = "connection.notes" name="notes" type="string" class="form-control" rows="3"></textarea>
+                        <textarea [(ngModel)] = "connectionNotes" name="notes" type="string" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="form form-row">
                         <div class="form-group col-3 margin-left-smallest">
 
-                            <select name="nameOffice" [(ngModel)]="connection.office"  class="btn btn-secondary">
+                            <select name="nameOffice" [(ngModel)]="connectionOffice"  class="btn btn-secondary">
                                 <option class="dropdown-item" value="null" >Office</option>
                                 <option class="dropdown-item" *ngFor="let city of cities" value={{city.name}}>
                                     {{city.name}}
@@ -38,7 +38,7 @@
                             </select>
                         </div>
                         <div class="form-group margin-left-small">
-                            <select name="nameFreq" [(ngModel)]="connection.frequency"  class="btn btn-secondary">
+                            <select name="nameFreq" [(ngModel)]="connectionFreq"  class="btn btn-secondary">
                                 <option class="dropdown-item" value="null">Meeting Frequency</option>
                                 <option class="dropdown-item" *ngFor="let frequency of frequencies" value={{frequency.name}}>
                                     {{frequency.name}}

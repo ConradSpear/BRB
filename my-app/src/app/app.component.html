@@ -77,9 +77,10 @@
         </div>
     </div>
 
-    <app-modal [connection]="selectedConnection" *ngIf="selectedConnection != null" (toggleModal)="toggleModal()"
+    <app-modal [connectionName]= "name" [connectionEmail]= "email" [connectionNotes]= "notes"
+    [connectionOffice]= "office"  [connectionFreq]= "freq" *ngIf="selectedConnection != null" (toggleModal)="toggleModal()"
         (connectionSave)='onConnectionSave($event)' [connections]="connections"></app-modal>
 
-    <app-add [connection]="newConnection" [addVisible]="addVisible" (toggleModal)="addModal()" (connectionSave)='onConnectionSave($event)'
+    <app-add [connection]="newConnection" [addVisible]="addVisible" (toggleModal)="addModal()" (connectionSave)='onConnectionSaveNew($event)'
         [connections]="connections"></app-add>
 </div>

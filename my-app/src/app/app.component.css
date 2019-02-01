@@ -89,6 +89,14 @@
     color:aliceblue !important
 }
 
+.card-text-subtitle{
+    color:rgb(175, 174, 174) !important
+}
+
+.card-text-subtitle2{
+    color: rgb(226, 225, 225) !important
+}
+
 a {
     text-decoration: none !important;
 }

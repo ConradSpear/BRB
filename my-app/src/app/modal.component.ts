@@ -4,6 +4,7 @@ import { Connection } from './connection';
 import {NgForm} from '@angular/forms';
 import { City } from './city';
 import { Frequency } from './frequency';
+import { connectionData } from './connectionData';
 
 @Component({
   selector: 'app-modal',
@@ -13,14 +14,21 @@ import { Frequency } from './frequency';
 export class ModalComponent {
   constructor(){}
   
-  @Input() email = '';
-  @Input() notes = '';
+  @Input() connectionName;
+  @Input() connectionEmail;
+  @Input() connectionNotes;
+  @Input() connectionOffice;
+  @Input() connectionFreq;
+
   @Input() modalVisible ;  
-  @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
+  
   @Input() connections: Array<Connection>;
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
   @Output() connectionSave = new EventEmitter<Connection>();
-  name = this.connection.name;
+  
+  //connectionName: string = name;
+  
+
   toggle() {
     this.toggleModal.emit();
   }
@@ -32,7 +40,8 @@ export class ModalComponent {
   }
 
   onSave() {
-    this.connectionSave.emit({name: name, email: "", notes: "", office: "", frequency: ""});
+    this.connectionSave.emit({name: this.connectionName, email: this.connectionEmail, notes: this.connectionNotes, office: this.connectionOffice, frequency: this.connectionFreq});
+    this.toggle();
   }
 
   cities = [
