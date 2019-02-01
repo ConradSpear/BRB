@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   onConnectionSave(c: Connection) {
     //this.selectedConnection = c;
     this.connections.push(c);
+    this.newConnection = {name:"", email: "", notes: "", office: "", frequency: ""};
   }
 
   addModal() {
