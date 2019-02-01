@@ -52,7 +52,27 @@
                 <div *ngIf="connection.office=='Dallas'">
                     <app-dal-connection (selected)="selected($event)" [connection]="connection"></app-dal-connection>
                 </div>
-
+                <div *ngIf="connection.office=='San Francisco'">
+                    <app-sf-connection (selected)="selected($event)" [connection]="connection"></app-sf-connection>
+                </div>
+                <div *ngIf="connection.office=='Philadelphia'">
+                    <app-phil-connection (selected)="selected($event)" [connection]="connection"></app-phil-connection>
+                </div>
+                <div *ngIf="connection.office=='Houston'">
+                    <app-hou-connection (selected)="selected($event)" [connection]="connection"></app-hou-connection>
+                </div>
+                <div *ngIf="connection.office=='Los Angeles'">
+                    <app-la-connection (selected)="selected($event)" [connection]="connection"></app-la-connection>
+                </div>
+                <div *ngIf="connection.office=='New York'">
+                    <app-ny-connection (selected)="selected($event)" [connection]="connection"></app-ny-connection>
+                </div>
+                <div *ngIf="connection.office=='Washington DC'">
+                    <app-dc-connection (selected)="selected($event)" [connection]="connection"></app-dc-connection>
+                </div>
+                <div *ngIf="connection.office=='Seattle'">
+                    <app-seattle-connection (selected)="selected($event)" [connection]="connection"></app-seattle-connection>
+                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { currentConnections} from './currentConnectionsJSON';
 import { Connection } from './connection';
-import {NgForm} from '@angular/forms';
 import { City } from './city';
 import { Frequency } from './frequency';
 
@@ -53,7 +51,6 @@ export class AddModalComponent {
     new Frequency(4, 'Within 6 months'),
     new Frequency(5, 'Never')
   ]
-
   
 }
 
