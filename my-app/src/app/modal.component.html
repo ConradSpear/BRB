@@ -14,17 +14,17 @@
                     <div class="form-row">
                         <div class="form-group col-4 margin-left-smallest">
                             <label for="inputEmail4"><strong>Name</strong></label>
-                            <input [(ngModel)] = "connection.name" value="Bob"  name="name" type="string" class="form-control form-control" id="inputEmail4" placeholder="">
+                            <input [ngModel] = "connection.name" value="Bob"  name="name" type="string" class="form-control form-control" id="inputEmail4" placeholder="">
                         </div>
                         <div class="form-group col-7 margin-left-small">
                             <label for="inputEmail"><strong>Email</strong></label>
-                            <input [(ngModel)] = "connection.email" name="email"  type="string" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
+                            <input [ngModel] = "connection.email" name="email"  type="string" class="form-control" id="inputEmail" placeholder="@parivedasolutions.com">
 
                         </div>
                     </div>
                     <div class="form-group col-12">
                         <label for="inputNotes"><strong>Notes</strong></label>
-                        <textarea [(ngModel)] = "connection.notes" name="notes" type="string" class="form-control" rows="3"></textarea>
+                        <textarea [ngModel] = "connection.notes" name="notes" type="string" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="form form-row">
@@ -59,7 +59,7 @@
             </div>
             <div class="modal-footer">
                 <button (click)="delete(person)" class="btn btn-success btn-sm margin-left-small"data-dismiss="modal">Delete</button>
-                <button type="submit" class="btn btn-success btn-sm margin-left-small" data-dismiss="modal">Save</button>
+                <button (click)="onSave()" type="submit" class="btn btn-success btn-sm margin-left-small" data-dismiss="modal">Save</button>
             </div>
         </div>
 

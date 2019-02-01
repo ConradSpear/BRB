@@ -18,8 +18,6 @@ export class ModalComponent {
   connections: Array<Connection> = currentConnections;
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
   @Output() connectionSave = new EventEmitter<Connection>();
-  
-
 
   toggle() {
     this.toggleModal.emit();
@@ -31,10 +29,8 @@ export class ModalComponent {
   }
 
   onSave() {
-    this.connectionSave.emit(
-        { name: this.name, email: this.email, notes: this.notes, office: '', frequency: '' }
-    );
-}
+    this.connectionSave.emit(this.connection);
+  }
 }
 
 

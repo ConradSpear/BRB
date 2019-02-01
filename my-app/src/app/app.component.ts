@@ -78,6 +78,7 @@ export class AppComponent implements OnInit {
 
   onConnectionSave(c: Connection) {
     this.connections.push(c);
+
   }
 
   cities = [
