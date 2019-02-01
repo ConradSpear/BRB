@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { City } from './city';
 import { Connection } from './Connection';
 import { currentConnections } from './currentConnectionsJSON'
+import { ConnectionChiComponent } from './connectionChi.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  
+
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
@@ -16,17 +17,30 @@ export class AppComponent implements OnInit {
   overLay: boolean = false;
   selectedConnection: Connection;
   visible = false;
+  addVisible = false;
+
+  newConnection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
 
   connections: Array<Connection> = currentConnections;
 
   selected(c: Connection) {
     this.selectedConnection = c;
-    
+
   }
 
-  modalVisible (){return this.selectedConnection != null};
+  onConnectionSave(c: Connection) {
+    //this.selectedConnection = c;
+    this.connections.push(c);
+  }
+
+  addModal() {
+    this.addVisible = !this.addVisible;
+  }
+
+  modalVisible() { return this.selectedConnection != null };
 
   ngOnInit() {
+       
     this.filterSelection('all');
   }
 
@@ -37,7 +51,7 @@ export class AppComponent implements OnInit {
     var modal = document.getElementById('myModal');
     window.onclick = (event) => {
       if (event.target === modal) {
-       
+
       }
     }
   }
@@ -76,9 +90,7 @@ export class AppComponent implements OnInit {
     var dd = document.getElementsByClassName("dropdown-menu");
   }
 
-  onConnectionSave(c: Connection) {
-    this.connections.push(c);
-  }
+
 
   cities = [
     new City(1, 'Atlanta'),

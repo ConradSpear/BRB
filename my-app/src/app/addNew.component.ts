@@ -6,33 +6,31 @@ import { City } from './city';
 import { Frequency } from './frequency';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
+  selector: 'app-add',
+  templateUrl: './addNew.component.html',
   styleUrls: ['./app.component.css']
 })
-export class ModalComponent {
+export class AddModalComponent {
   constructor(){}
   
   @Input() email = '';
   @Input() notes = '';
-  @Input() modalVisible ;  
+  @Input() addVisible = '';  
   @Input() connection: Connection = {name:"", email: "", notes: "", office: "", frequency: ""};
   @Input() connections: Array<Connection>;
   @Output() toggleModal: EventEmitter<any> = new EventEmitter();
   @Output() connectionSave = new EventEmitter<Connection>();
-  name = this.connection.name;
+ 
+
   toggle() {
     this.toggleModal.emit();
   }
   
-  onDelete(c: Connection) {
-    const index = this.connections.indexOf(c);
-    this.connections.splice(index, 1);
-    this.toggle();
-  }
-
+  
   onSave() {
-    this.connectionSave.emit({name: name, email: "", notes: "", office: "", frequency: ""});
+    
+    this.connectionSave.emit(this.connection);
+    this.toggle()
   }
 
   cities = [
@@ -55,6 +53,8 @@ export class ModalComponent {
     new Frequency(4, 'Within 6 months'),
     new Frequency(5, 'Never')
   ]
+
+  
 }
 
 

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal.component';
+import { AddModalComponent } from './addNew.component';
 import { ConnectionComponent } from './connection.component';
 import { ConnectionChiComponent } from './connectionChi.component';
 import { ConnectionDalComponent } from './connectionDal.component';
@@ -13,6 +14,7 @@ import { ConnectionDalComponent } from './connectionDal.component';
   declarations: [
     AppComponent,
     ModalComponent,
+    AddModalComponent,
     ConnectionComponent,
     ConnectionChiComponent,
     ConnectionDalComponent,

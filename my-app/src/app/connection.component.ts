@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { currentConnections } from './currentConnectionsJSON';
 import { Connection } from './connection';
+
 @Component({
     selector: 'app-connection',
     templateUrl: './connection.component.html',

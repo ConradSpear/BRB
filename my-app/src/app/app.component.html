@@ -15,7 +15,8 @@
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Calendar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Add Connection</a>
+                        <a (click)="addModal()" class="nav-link" href="#" tabindex="-1" aria-disabled="true">Add
+                            Connection</a>
                     </li>
                 </ul>
             </div>
@@ -46,16 +47,19 @@
                     <app-connection (selected)="selected($event)" [connection]="connection"></app-connection>
                 </div>
                 <div *ngIf="connection.office=='Chicago'">
-                        <app-chi-connection (selected)="selected($event)" [connection]="connection"></app-chi-connection>
-                    </div>
-                    <div *ngIf="connection.office=='Dallas'">
-                            <app-dal-connection (selected)="selected($event)" [connection]="connection"></app-dal-connection>
-                        </div>
-            
+                    <app-chi-connection (selected)="selected($event)" [connection]="connection"></app-chi-connection>
+                </div>
+                <div *ngIf="connection.office=='Dallas'">
+                    <app-dal-connection (selected)="selected($event)" [connection]="connection"></app-dal-connection>
+                </div>
+
             </div>
         </div>
     </div>
 
     <app-modal [connection]="selectedConnection" *ngIf="selectedConnection != null" (toggleModal)="toggleModal()"
-        (connectionSave)='onConnectionSave($event)'></app-modal>
+        (connectionSave)='onConnectionSave($event)' [connections]="connections"></app-modal>
+
+    <app-add [connection]="newConnection" [addVisible]="addVisible" (toggleModal)="addModal()" (connectionSave)='onConnectionSave($event)'
+        [connections]="connections"></app-add>
 </div>
