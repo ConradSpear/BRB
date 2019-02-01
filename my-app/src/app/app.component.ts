@@ -15,20 +15,23 @@ export class AppComponent implements OnInit {
   editedName = '';
   overLay: boolean = false;
   selectedConnection: Connection;
+  visible = false;
 
   connections: Array<Connection> = currentConnections;
 
   selected(c: Connection) {
     this.selectedConnection = c;
+    
   }
 
   modalVisible (){return this.selectedConnection != null};
 
   ngOnInit() {
-    this.filterSelection("all")
+    this.filterSelection('all');
   }
 
   toggleModal() {
+    this.visible = !this.visible;
     this.selectedConnection = undefined;
     this.editedName = this.name;
     var modal = document.getElementById('myModal');
