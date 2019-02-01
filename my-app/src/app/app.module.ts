@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal.component';
 import { ConnectionComponent } from './connection.component';
+import { ConnectionChiComponent } from './connectionChi.component';
+import { ConnectionDalComponent } from './connectionDal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalComponent,
-    ConnectionComponent
+    ConnectionComponent,
+    ConnectionChiComponent,
+    ConnectionDalComponent,
   ],
   imports: [
     BrowserModule,

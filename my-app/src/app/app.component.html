@@ -43,12 +43,19 @@
         <div class="row margin-left-xsmall">
             <div *ngFor="let connection of connections">
                 <div *ngIf="connection.office=='Atlanta'">
-                    <app-connection (selected)="selected($event)" [connection]="connection" ></app-connection>
+                    <app-connection (selected)="selected($event)" [connection]="connection"></app-connection>
                 </div>
+                <div *ngIf="connection.office=='Chicago'">
+                        <app-chi-connection (selected)="selected($event)" [connection]="connection"></app-chi-connection>
+                    </div>
+                    <div *ngIf="connection.office=='Dallas'">
+                            <app-dal-connection (selected)="selected($event)" [connection]="connection"></app-dal-connection>
+                        </div>
+            
             </div>
         </div>
     </div>
-    
-    <app-modal [connection]="selectedConnection"  *ngIf="selectedConnection != null" (toggleModal)="toggleModal()" (connectionSave)='onConnectionSave($event)'></app-modal>
 
+    <app-modal [connection]="selectedConnection" *ngIf="selectedConnection != null" (toggleModal)="toggleModal()"
+        (connectionSave)='onConnectionSave($event)'></app-modal>
 </div>

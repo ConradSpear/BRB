@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './city';
-import { Frequency } from './frequency';
 import { Connection } from './Connection';
 import { currentConnections } from './currentConnectionsJSON'
-import { ConnectionComponent } from './connection.component';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
@@ -73,12 +71,10 @@ export class AppComponent implements OnInit {
 
   toggleDropDownName() {
     var dd = document.getElementsByClassName("dropdown-menu");
-
   }
 
   onConnectionSave(c: Connection) {
     this.connections.push(c);
-
   }
 
   cities = [
@@ -101,5 +97,4 @@ export class AppComponent implements OnInit {
     new City(4, 'Within 6 months'),
     new City(5, 'Never')
   ]
-
 }

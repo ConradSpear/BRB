@@ -1,13 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { currentConnections } from './currentConnectionsJSON';
+
 import { Connection } from './connection';
 @Component({
-    selector: 'app-connection',
-    templateUrl: './connection.component.html',
+    selector: 'app-chi-connection',
+    templateUrl: './connectionChi.component.html',
     styleUrls: ['./app.component.css']
 })
 
-export class ConnectionComponent {
+export class ConnectionChiComponent {
     constructor() { }
 
     @Input() connection: Connection = { name: "", email: "", notes: "", office: "", frequency: "" };
